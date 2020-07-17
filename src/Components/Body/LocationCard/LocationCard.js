@@ -3,10 +3,20 @@ import React from 'react';
 // components
 import GeoInput from './GeoInput';
 
-const LocationCard = () => {
+const LocationCard = ({
+	placeholder,
+	location,
+	changeLocation,
+	submitLocation,
+}) => {
 	return (
 		<div>
-			<GeoInput />
+			<GeoInput
+				placeholder={placeholder}
+				location={location}
+				changeLocation={changeLocation}
+				submitLocation={submitLocation}
+			/>
 		</div>
 	);
 };

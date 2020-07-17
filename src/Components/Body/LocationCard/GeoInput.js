@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const GeoInput = () => {
-	const [location, setLocation] = useState();
-
-	// change handler when user writes location
-	const changeLocation = (e) => {
-		setLocation(e.target.value.toLowerCase());
-	};
-
-	// submit handler when User submits location
-	const submitLocation = (e) => {
-		e.preventDefault();
-	};
+const GeoInput = ({
+	placeholder,
+	location,
+	changeLocation,
+	submitLocation,
+}) => {
 	return (
-		<form onSubmit={submitLocation}>
+		<form onSubmit={submitLocation} id={placeholder}>
 			<input
 				type='text'
-				placeholder='Select location'
+				placeholder={`Add your ${placeholder} location`}
+				value={location}
 				onChange={changeLocation}
 			/>
 			<button type='submit'>Search</button>

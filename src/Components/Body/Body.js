@@ -11,11 +11,27 @@ const StyledSection = styled.section`
 	align-items: center;
 `;
 
-const Body = () => {
+const Body = ({
+	currentLocation,
+	dreamLocation,
+	changeCurrentLocation,
+	changeDreamLocation,
+	submitLocation,
+}) => {
 	return (
 		<StyledSection>
-			<LocationCard />
-			<LocationCard />
+			<LocationCard
+				placeholder='current'
+				location={currentLocation}
+				changeLocation={changeCurrentLocation}
+				submitLocation={submitLocation}
+			/>
+			<LocationCard
+				placeholder='dream'
+				location={dreamLocation}
+				changeLocation={changeDreamLocation}
+				submitLocation={submitLocation}
+			/>
 		</StyledSection>
 	);
 };
