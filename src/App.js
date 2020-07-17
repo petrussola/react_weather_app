@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Body from './Components/Body/Body';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 require('dotenv').config();
 
@@ -35,6 +35,7 @@ function App() {
 					`${baseApi}?q=${currentLocation}&appid=${apiKey}&units=metric`
 				);
 				setDataCurrentLocation(res.data);
+				localStorage.setItem('currentLocation', JSON.stringify(res.data));
 			} else {
 				const res = await axios.get(
 					`${baseApi}?q=${dreamLocation}&appid=${apiKey}&units=metric`
@@ -50,6 +51,14 @@ function App() {
 		}
 	};
 
+	useEffect(() => {
+		if (localStorage.getItem('currentLocation')) {
+			setDataCurrentLocation(
+				JSON.parse(localStorage.getItem('currentLocation'))
+			);
+		}
+	}, []);
+
 	return (
 		<div className='App'>
 			<Header />
@@ -59,6 +68,8 @@ function App() {
 				changeCurrentLocation={changeCurrentLocation}
 				changeDreamLocation={changeDreamLocation}
 				submitLocation={submitLocation}
+				dataCurrentLocation={dataCurrentLocation}
+				dataDreamLocation={dataDreamLocation}
 			/>
 		</div>
 	);

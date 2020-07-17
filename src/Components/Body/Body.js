@@ -2,11 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 //components
-import LocationCard from './LocationCard/LocationCard';
+import GeoInput from './InputCard/GeoInput';
+import DisplayWeatherCard from './DisplayCard/DisplayWeatherCard';
+
+const StyledBody = styled.section`
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+`;
 
 const StyledSection = styled.section`
 	display: flex;
-	flex-flow: row wrap;
+	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
 `;
@@ -17,22 +25,30 @@ const Body = ({
 	changeCurrentLocation,
 	changeDreamLocation,
 	submitLocation,
+	dataCurrentLocation,
+	dataDreamLocation,
 }) => {
 	return (
-		<StyledSection>
-			<LocationCard
-				placeholder='current'
-				location={currentLocation}
-				changeLocation={changeCurrentLocation}
-				submitLocation={submitLocation}
-			/>
-			<LocationCard
-				placeholder='dream'
-				location={dreamLocation}
-				changeLocation={changeDreamLocation}
-				submitLocation={submitLocation}
-			/>
-		</StyledSection>
+		<StyledBody id='inputs'>
+			<StyledSection>
+				<GeoInput
+					placeholder='current'
+					location={currentLocation}
+					changeLocation={changeCurrentLocation}
+					submitLocation={submitLocation}
+				/>
+				<DisplayWeatherCard dataLocation={dataCurrentLocation} />
+			</StyledSection>
+			<StyledSection>
+				<GeoInput
+					placeholder='dream'
+					location={dreamLocation}
+					changeLocation={changeDreamLocation}
+					submitLocation={submitLocation}
+				/>
+				<DisplayWeatherCard dataLocation={dataDreamLocation} />
+			</StyledSection>
+		</StyledBody>
 	);
 };
 
