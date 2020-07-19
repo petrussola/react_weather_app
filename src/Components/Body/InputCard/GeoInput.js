@@ -5,7 +5,8 @@ const StyledForm = styled.form`
 	margin-top: 0.5rem;
 	max-width: 100%;
 	min-height: 2rem;
-	input, button {
+	input,
+	button {
 		font-size: 1.5rem;
 		padding: 0.5rem;
 	}
@@ -14,13 +15,6 @@ const StyledForm = styled.form`
 	}
 	button {
 		max-width: 25%;
-	}
-	textarea:focus,
-	input:focus {
-		/* outline: none; */
-	}
-	button {
-
 	}
 `;
 

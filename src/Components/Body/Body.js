@@ -4,6 +4,7 @@ import styled from 'styled-components';
 //components
 import GeoInput from './InputCard/GeoInput';
 import DisplayWeatherCard from './DisplayCard/DisplayWeatherCard';
+import ComparisonCard from './Comparison/ComparisonCard';
 
 const StyledBody = styled.section`
 	display: flex;
@@ -17,6 +18,7 @@ const StyledSection = styled.section`
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
+	min-width: 300px;
 `;
 
 const Body = ({
@@ -47,6 +49,12 @@ const Body = ({
 					submitLocation={submitLocation}
 				/>
 				<DisplayWeatherCard dataLocation={dataDreamLocation} />
+			</StyledSection>
+			<StyledSection>
+				<ComparisonCard
+					dataCurrentLocation={dataCurrentLocation}
+					dataDreamLocation={dataDreamLocation}
+				/>
 			</StyledSection>
 		</StyledBody>
 	);
