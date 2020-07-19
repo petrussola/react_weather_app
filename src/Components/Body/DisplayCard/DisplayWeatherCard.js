@@ -13,7 +13,8 @@ const StyledCard = styled.div`
 	margin-top: 1rem;
 	padding: 1rem;
 	@media (max-width: 600px) {
-		max-width: 100vw;
+		max-width: 90vw;
+		margin: 0 auto;
 	}
 	#header-card,
 	#footer-card {

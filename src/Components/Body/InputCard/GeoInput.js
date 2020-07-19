@@ -6,13 +6,14 @@ const StyledForm = styled.form`
 	max-width: 100%;
 	min-height: 2rem;
 	@media (max-width: 600px) {
-		max-width: 90%;
-		margin: 1rem auto 0.5rem;
+		max-width: 90vw;
+		margin: 1rem auto 0.5rem auto;
 	}
 	input,
 	button {
 		font-size: 1.5rem;
 		padding: 0.5rem;
+		border-radius: 4px;
 		@media (max-width: 600px) {
 			font-size: 1rem;
 		}
