@@ -29,7 +29,7 @@ const StyledCard = styled.div`
 	}
 `;
 
-const DisplayWeatherCard = ({ dataLocation }) => {
+const DisplayWeatherCard = ({ dataLocation, type, clearCard }) => {
 	if (!dataLocation.weather) {
 		return null;
 	}
@@ -65,6 +65,7 @@ const DisplayWeatherCard = ({ dataLocation }) => {
 					<h3>{temp.humidity}</h3>
 				</div>
 			</div>
+			<button onClick={(e) => clearCard(type)}>Clear</button>
 		</StyledCard>
 	);
 };

@@ -28,6 +28,7 @@ const Body = ({
 	submitLocation,
 	dataCurrentLocation,
 	dataDreamLocation,
+	clearCard,
 }) => {
 	return (
 		<StyledBody id='inputs'>
@@ -38,7 +39,11 @@ const Body = ({
 					changeLocation={changeCurrentLocation}
 					submitLocation={submitLocation}
 				/>
-				<DisplayWeatherCard dataLocation={dataCurrentLocation} />
+				<DisplayWeatherCard
+					dataLocation={dataCurrentLocation}
+					type='currentLocation'
+					clearCard={clearCard}
+				/>
 			</StyledSection>
 			<StyledSection>
 				<GeoInput
@@ -47,7 +52,11 @@ const Body = ({
 					changeLocation={changeDreamLocation}
 					submitLocation={submitLocation}
 				/>
-				<DisplayWeatherCard dataLocation={dataDreamLocation} />
+				<DisplayWeatherCard
+					dataLocation={dataDreamLocation}
+					type='dreamLocation'
+					clearCard={clearCard}
+				/>
 			</StyledSection>
 			<StyledSection>
 				<ComparisonCard

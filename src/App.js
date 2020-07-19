@@ -52,6 +52,12 @@ function App() {
 		}
 	};
 
+	// on clear card contents
+
+	const clearCard = (type) => {
+		localStorage.removeItem(type);
+	};
+
 	useEffect(() => {
 		if (localStorage.getItem('currentLocation')) {
 			const extractedData = localStorage.getItem('currentLocation');
@@ -74,6 +80,7 @@ function App() {
 				submitLocation={submitLocation}
 				dataCurrentLocation={dataCurrentLocation}
 				dataDreamLocation={dataDreamLocation}
+				clearCard={clearCard}
 			/>
 		</div>
 	);
