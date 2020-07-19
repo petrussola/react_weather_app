@@ -41,6 +41,7 @@ function App() {
 					`${baseApi}?q=${dreamLocation}&appid=${apiKey}&units=metric`
 				);
 				setDataDreamLocation(res.data);
+				localStorage.setItem('dreamLocation', JSON.stringify(res.data));
 			}
 		} catch (error) {
 			console.log(error);
@@ -53,9 +54,12 @@ function App() {
 
 	useEffect(() => {
 		if (localStorage.getItem('currentLocation')) {
-			setDataCurrentLocation(
-				JSON.parse(localStorage.getItem('currentLocation'))
-			);
+			const extractedData = localStorage.getItem('currentLocation');
+			setDataCurrentLocation(JSON.parse(extractedData));
+		}
+		if (localStorage.getItem('dreamLocation')) {
+			const extractedData = localStorage.getItem('dreamLocation');
+			setDataDreamLocation(JSON.parse(extractedData));
 		}
 	}, []);
 
