@@ -18,7 +18,6 @@ const StyledSection = styled.section`
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	min-width: 300px;
 `;
 
 const Body = ({

@@ -8,7 +8,6 @@ const StyledHeader = styled.header`
 	align-items: center;
 	border-bottom: 1px solid #000;
     padding: 1rem;
-    max-height: 100px;
 	h1, h3 {
 		margin: 0
 	}

@@ -12,6 +12,9 @@ const StyledCard = styled.div`
 	justify-content: flex-start;
 	margin-top: 1rem;
 	padding: 1rem;
+	@media (max-width: 600px) {
+		max-width: 100vw;
+	}
 	#header-card,
 	#footer-card {
 		width: 100%;
