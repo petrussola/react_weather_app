@@ -10,6 +10,8 @@ const StyledCard = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
+	margin-top: 1rem;
+	padding: 1rem;
 	#header-card,
 	#footer-card {
 		width: 100%;
